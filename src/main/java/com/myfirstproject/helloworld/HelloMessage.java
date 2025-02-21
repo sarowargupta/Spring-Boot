@@ -23,4 +23,9 @@ public class HelloMessage {
 
    }
 
+//UC_4_ShowHelloName by the use of post request method
+@PostMapping("/post")
+    public String sayHelloWithPost(@RequestBody UserDTOBean user) {
+    return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
 }
