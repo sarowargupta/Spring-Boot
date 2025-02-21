@@ -1,10 +1,9 @@
 package com.myfirstproject.helloworld;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //UC_1_ShowHelloMessage
 @RestController
+@RequestMapping("/hello")
 public class HelloMessage {
     @GetMapping("/hello")
     public String sayHello() {
@@ -16,4 +15,12 @@ public class HelloMessage {
     public String sayHelloWithName(@RequestParam String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+
+//UC_3_ShowHelloName as path variable
+@GetMapping("/param/{name}")
+    public String sayHelloWithPath(@PathVariable String name) {
+    return "Hello " + name + " from BridgeLabz";
+
+   }
+
 }
